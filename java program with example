@@ -1,0 +1,28 @@
+public class employee
+  {
+    public string eid;
+    public string ename;
+    public string esal;
+    public string eaddr;
+    public Employee () {
+    }
+      public Employee (string eid){
+  }
+      public Employee (string eid,ename) {
+  }
+      public Employee (string eid,ename,float esal) {
+   }
+      public Employee (string eid,ename,float esal,string eaddr) {
+   }
+     public void add (string eid,ename,float esal,string eaddr)  {
+  }
+    public void search (string eid) {
+ }
+    public void update (string eid,string ename,float esal,string eaddr) {
+  }
+    public void delete (string eid) {
+    }
+    
+    
+    
+    
