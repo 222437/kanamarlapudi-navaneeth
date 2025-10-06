@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+        int n,i,k,max=0,max1=0,j;
+        printf("enter the value of n\n");
+        scanf("%d",&n);
+
+        if(n<0)
+        {
+                printf("no of elemnts are invalid");
+                return 0;
+        }
+        int arr[n];
+        for(i=0;i<n;i++)
+        {
+                printf("enter the elements \n");
+                scanf("%d",&arr[i]);
+        }
+        printf("enter the value of k\n");
+        scanf("%d",&k);
+        for(i=0;i<k;i++)
+        {
+                //printf("ENTER THE\n");
+                max+=arr[i];
+        }
+        for(i=0;i<(n-k+1);i++)
+         {
+                max1=0;
+                for(j=i;j<i+k;j++)
+                {
+                        max1+=arr[j];
+                }
+                if(max<max1)
+                {
+                        max=max1;
+                }
+        }
+        printf("%d\n",max);
+}
+        {
+                max1=0;
+                for(j=i;j<i+k;j++)
