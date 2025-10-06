@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int binaryToInt(const char *binaryStr) {
+    int len = strlen(binaryStr);
+    int result = 0;
+
+    // Convert binary string to unsigned int
+    for (int i = 0; i < len; i++) {
+        result = result * 2 + (binaryStr[i] - '0');
+    }
+
+    // Check sign bit (MSB)
+    if (binaryStr[0] == '1') {
+        // Negative number in two's complement
+        result -= (1 << len);  // Equivalent to subtracting 2^len
+    }
+
+    return result;
+}
+
+int main() {
+    char binaryStr[20];
+
+    printf("Enter 8-bit binary number: ");
+    scanf("%s", binaryStr);
+
+    int num = binaryToInt(binaryStr);
+    printf("Integer value: %d\n", num);   
+    return 0;
+}
