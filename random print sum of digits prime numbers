@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int digitSum(int n)
+{
+    int sum = 0;
+    while (n > 0)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
+int isPrime(int n)
+{
+    if (n < 2)
+       return 0;
+    for(int i = 2; i * i <= n; i++)
+    {
+        if (n % i == 0)
+           return 0;
+    }
+    return 1;
+}
+
+int main()
+{
+   int count = 0, num, sum;
+
+    srand(getpid());
+
+    printf("Numbers with prime digit sums:\n");
+
+    for (int i = 0; i < 20; i++)
+    {
+        num = rand() % 10000;
+        sum = digitSum(num);
+
+        if (isPrime(sum))
+        {
+
+            printf("%d (Digit sum = %d)\n", num, sum);
+            count++;
+        }
+    }
+
+    printf("\nTotal count of numbers with prime digit sum: %d\n", count);
+
+    return 0;
+}
